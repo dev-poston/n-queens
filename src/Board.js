@@ -109,13 +109,14 @@
     // test if a specific column on this board contains a conflict
     hasColConflictAt: function(colIndex) {
       var counter = 0;
-      for (var i = 0; i < this.rows().length; i++) {
-        if (this.rows()[i][colIndex] === 1) {
+
+      for (var key in this.attributes) {
+        if (this.attributes[key][colIndex] === 1) {
           counter++;
         }
-      }
-      if (counter >= 2) {
-        return true;
+        if (counter === 2) {
+          return true;
+        }
       }
       return false; // fixme
     },
