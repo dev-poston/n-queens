@@ -139,6 +139,7 @@
     hasMajorDiagonalConflictAt: function(majorDiagonalColumnIndexAtFirstRow) {
       var counter = 0;
       for (var i = 0; i < this.rows().length; i++) {
+
         if (this.rows()[i][majorDiagonalColumnIndexAtFirstRow]) {
           counter++;
         }
@@ -193,7 +194,6 @@
       //n = 4,+2 [0,6] [0-5]
       //n=4, +3 [0,7] [0-6]
       for (var i = 0; i < boardSize; i++) {
-        console.log(i);
         if (this.hasMinorDiagonalConflictAt(i)) {
           return true;
         }
