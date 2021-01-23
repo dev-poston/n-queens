@@ -97,6 +97,7 @@ window.findNQueensSolution = function(n) {
   // };
   // inner(0);
 
+  //new plan?
   //==================================================
   //create solution board with children tree array
   //add child board w 1 placed on each position on first row
@@ -117,7 +118,7 @@ window.findNQueensSolution = function(n) {
   };
 
   //testing out how to add a new board with matrix populated w one queen to old board children
-  // not inheriting the children array tho :( Im tired lol
+  // not inheriting the children array in new board tho, I know Im not doing it right :( Im tired, lol
   for (var row = 0; row < n; row++) {
     for (var col = 0; col < n; col++) {
       var newBoard = new Board({n: n});
@@ -126,7 +127,8 @@ window.findNQueensSolution = function(n) {
     }
   }
 
-  // cant figure out how to access the childs matrix
+  // cant figure out how to access the childs matrix rows
+  // check out the console log, expand [r]
   console.log(solution.children);
   console.log('Single solution for ' + n + ' queens:', JSON.stringify(solution));
   return solution.rows();
